@@ -25,6 +25,8 @@
 		36CA4C6A1977F50F00227ED7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 36CA4C681977F50F00227ED7 /* InfoPlist.strings */; };
 		36CA4C6C1977F50F00227ED7 /* SimpleWeatherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 36CA4C6B1977F50F00227ED7 /* SimpleWeatherTests.m */; };
 		36CA4C771977F7A400227ED7 /* SDWeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36CA4C761977F7A400227ED7 /* SDWeatherViewController.m */; };
+		36EAC0E019822FA100129B8B /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 36EAC0DE19822FA100129B8B /* iTunesArtwork */; };
+		36EAC0E119822FA100129B8B /* iTunesArtwork@2x in Resources */ = {isa = PBXBuildFile; fileRef = 36EAC0DF19822FA100129B8B /* iTunesArtwork@2x */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,8 @@
 		36CA4C6B1977F50F00227ED7 /* SimpleWeatherTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleWeatherTests.m; sourceTree = "<group>"; };
 		36CA4C751977F7A400227ED7 /* SDWeatherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWeatherViewController.h; sourceTree = "<group>"; };
 		36CA4C761977F7A400227ED7 /* SDWeatherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWeatherViewController.m; sourceTree = "<group>"; };
+		36EAC0DE19822FA100129B8B /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
+		36EAC0DF19822FA100129B8B /* iTunesArtwork@2x */ = {isa = PBXFileReference; lastKnownFileType = file; path = "iTunesArtwork@2x"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -242,6 +246,8 @@
 		36EAC0DC19822B7100129B8B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				36EAC0DE19822FA100129B8B /* iTunesArtwork */,
+				36EAC0DF19822FA100129B8B /* iTunesArtwork@2x */,
 				36CA4C581977F50F00227ED7 /* Images.xcassets */,
 			);
 			path = Resources;
@@ -325,8 +331,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36EAC0E019822FA100129B8B /* iTunesArtwork in Resources */,
 				36CA4C511977F50F00227ED7 /* InfoPlist.strings in Resources */,
 				36CA4C591977F50F00227ED7 /* Images.xcassets in Resources */,
+				36EAC0E119822FA100129B8B /* iTunesArtwork@2x in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
