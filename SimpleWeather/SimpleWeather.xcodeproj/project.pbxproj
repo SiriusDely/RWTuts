@@ -58,7 +58,7 @@
 		36CA4C541977F50F00227ED7 /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 		36CA4C551977F50F00227ED7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		36CA4C561977F50F00227ED7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		36CA4C581977F50F00227ED7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		36CA4C581977F50F00227ED7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../Images.xcassets; sourceTree = "<group>"; };
 		36CA4C5E1977F50F00227ED7 /* SimpleWeatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleWeatherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		36CA4C5F1977F50F00227ED7 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		36CA4C671977F50F00227ED7 /* SimpleWeatherTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SimpleWeatherTests-Info.plist"; sourceTree = "<group>"; };
@@ -130,17 +130,15 @@
 			children = (
 				36CA4C551977F50F00227ED7 /* AppDelegate.h */,
 				36CA4C561977F50F00227ED7 /* AppDelegate.m */,
-				36CA4C751977F7A400227ED7 /* SDWeatherViewController.h */,
-				36CA4C761977F7A400227ED7 /* SDWeatherViewController.m */,
-				36BB3F2219791A73008D0553 /* SDClient.h */,
-				36BB3F2319791A73008D0553 /* SDClient.m */,
-				36BB3F2519791A8F008D0553 /* SDManager.h */,
-				36BB3F2619791A8F008D0553 /* SDManager.m */,
-				36BB3F2819791AA7008D0553 /* SDCondition.h */,
-				36BB3F2919791AA7008D0553 /* SDCondition.m */,
-				36BB3F2B19791AC1008D0553 /* SDDailyForecast.h */,
-				36BB3F2C19791AC1008D0553 /* SDDailyForecast.m */,
-				36CA4C581977F50F00227ED7 /* Images.xcassets */,
+				36EAC0D419822AFC00129B8B /* Models */,
+				36EAC0D519822B0D00129B8B /* Views */,
+				36EAC0D619822B1300129B8B /* Controllers */,
+				36EAC0D719822B1800129B8B /* ViewModels */,
+				36EAC0D819822B2300129B8B /* Managers */,
+				36EAC0D919822B4300129B8B /* Categories */,
+				36EAC0DA19822B5C00129B8B /* Storyboards */,
+				36EAC0DB19822B6700129B8B /* Nibs */,
+				36EAC0DC19822B7100129B8B /* Resources */,
 				36CA4C4D1977F50F00227ED7 /* Supporting Files */,
 			);
 			path = SimpleWeather;
@@ -173,6 +171,80 @@
 				36CA4C681977F50F00227ED7 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		36EAC0D419822AFC00129B8B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				36BB3F2819791AA7008D0553 /* SDCondition.h */,
+				36BB3F2919791AA7008D0553 /* SDCondition.m */,
+				36BB3F2B19791AC1008D0553 /* SDDailyForecast.h */,
+				36BB3F2C19791AC1008D0553 /* SDDailyForecast.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		36EAC0D519822B0D00129B8B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		36EAC0D619822B1300129B8B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				36CA4C751977F7A400227ED7 /* SDWeatherViewController.h */,
+				36CA4C761977F7A400227ED7 /* SDWeatherViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		36EAC0D719822B1800129B8B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		36EAC0D819822B2300129B8B /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				36BB3F2219791A73008D0553 /* SDClient.h */,
+				36BB3F2319791A73008D0553 /* SDClient.m */,
+				36BB3F2519791A8F008D0553 /* SDManager.h */,
+				36BB3F2619791A8F008D0553 /* SDManager.m */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		36EAC0D919822B4300129B8B /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		36EAC0DA19822B5C00129B8B /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		36EAC0DB19822B6700129B8B /* Nibs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Nibs;
+			sourceTree = "<group>";
+		};
+		36EAC0DC19822B7100129B8B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				36CA4C581977F50F00227ED7 /* Images.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -433,6 +505,24 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = SimpleWeather/Prefix.pch;
 				INFOPLIST_FILE = SimpleWeather/Info.plist;
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/HexColors\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/LBBlurredImage\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Mantle\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/ReactiveCocoa\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/ReactiveCocoa/ReactiveCocoa\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/TSMessages\"",
+					"-DDEBUG",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

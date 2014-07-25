@@ -29,7 +29,7 @@
 }
 
 - (RACSignal *)fetchJSONFromURL:(NSURL *)url {
-  NSLog(@"Fetching: %@", url.absoluteString);
+  DLog(@"Fetching: %@", url.absoluteString);
   // 1
   return [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
     // 2
@@ -59,7 +59,7 @@
     }];
   }] doError:^(NSError *error) {
     // 5
-    NSLog(@"%@", error);
+    DLog(@"%@", error);
   }];
 }
 
