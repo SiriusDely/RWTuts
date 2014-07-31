@@ -1,5 +1,5 @@
 //
-//  SDCondition.h
+//  SDWeather.h
 //  SimpleWeather
 //
 //  Created by SiriusDely on 7/18/14.
@@ -9,7 +9,7 @@
 #import <Mantle/Mantle.h>
 
 // 1
-@interface SDCondition : MTLModel <MTLJSONSerializing>
+@interface SDWeather : MTLModel <MTLJSONSerializing>
 
 // 2
 @property (nonatomic, strong) NSDate *date;

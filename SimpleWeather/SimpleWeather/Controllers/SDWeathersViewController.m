@@ -1,27 +1,30 @@
 //
-//  SDWeatherViewController.m
+//  SDWeathersViewController.m
 //  SimpleWeather
 //
 //  Created by SiriusDely on 7/17/14.
 //  Copyright (c) 2014 Sirius Dely. All rights reserved.
 //
 
-#import "SDWeatherViewController.h"
+#import "SDWeathersViewController.h"
 
 #import <LBBlurredImage/UIImageView+LBBlurredImage.h>
 
-@interface SDWeatherViewController () <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate>
+@interface SDWeathersViewController () <
+UIScrollViewDelegate,
+UITableViewDataSource,
+UITableViewDelegate
+>
 
-@property (nonatomic, strong) UIImageView *backgroundImageView;
-@property (nonatomic, strong) UIImageView *blurredImageView;
-@property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, assign) CGFloat screenHeight;
+@property (nonatomic, strong) IBOutlet UIImageView *backgroundImageView;
+@property (nonatomic, strong) IBOutlet UIImageView *blurredImageView;
+@property (nonatomic, strong) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSDateFormatter *hourlyFormatter;
 @property (nonatomic, strong) NSDateFormatter *dailyFormatter;
 
 @end
 
-@implementation SDWeatherViewController
+@implementation SDWeathersViewController
 
 - (id)init {
   if (self = [super init]) {
@@ -46,33 +49,11 @@
 - (void)viewDidLoad
 {
   [super viewDidLoad];
-  // Do any additional setup after loading the view.
-  // 1
-  self.screenHeight = [UIScreen mainScreen].bounds.size.height;
   
   UIImage *background = [UIImage imageNamed:@"bg"];
   
-  // 2
-  self.backgroundImageView = [[UIImageView alloc] initWithImage:background];
-  self.backgroundImageView.contentMode = UIViewContentModeScaleAspectFill;
-  [self.view addSubview:self.backgroundImageView];
-  
-  // 3
-  self.blurredImageView = [[UIImageView alloc] init];
-  self.blurredImageView.contentMode = UIViewContentModeScaleAspectFill;
   self.blurredImageView.alpha = 0;
   [self.blurredImageView setImageToBlur:background blurRadius:10 completionBlock:nil];
-  [self.view addSubview:self.blurredImageView];
-  
-  // 4
-  self.tableView = [[UITableView alloc] init];
-  self.tableView.backgroundColor = [UIColor clearColor];
-  self.tableView.delegate = self;
-  self.tableView.dataSource = self;
-  self.tableView.separatorColor = [UIColor colorWithWhite:1 alpha:0.2];
-  self.tableView.pagingEnabled = YES;
-  [self.view addSubview:self.tableView];
-  
   // 1
   CGRect headerFrame = [UIScreen mainScreen].bounds;
   // 2
@@ -146,14 +127,13 @@
   iconView.contentMode = UIViewContentModeScaleAspectFit;
   iconView.backgroundColor = [UIColor clearColor];
   [header addSubview:iconView];
-
-  [[SDManager sharedManager] findCurrentLocation];
+  [[SDLocationManager sharedManager] findCurrentLocation];
   
   // 1
-  [[RACObserve([SDManager sharedManager], currentCondition)
+  [[RACObserve([SDLocationManager sharedManager], currentCondition)
     // 2
     deliverOn:RACScheduler.mainThreadScheduler]
-   subscribeNext:^(SDCondition *newCondition) {
+   subscribeNext:^(SDWeather *newCondition) {
      // 3
      temperatureLabel.text = [NSString stringWithFormat:@"%.0f°", newCondition.temperature.floatValue];
      conditionsLabel.text = [newCondition.condition capitalizedString];
@@ -166,8 +146,8 @@
   // 1
   RAC(hiloLabel, text) = [[RACSignal combineLatest:@[
                                                      // 2
-                                                     RACObserve([SDManager sharedManager], currentCondition.tempHigh),
-                                                     RACObserve([SDManager sharedManager], currentCondition.tempLow)
+                                                     RACObserve([SDLocationManager sharedManager], currentCondition.tempHigh),
+                                                     RACObserve([SDLocationManager sharedManager], currentCondition.tempLow)
                                                      ]
                            // 3
                                             reduce:^(NSNumber *hi, NSNumber *low) {
@@ -175,20 +155,19 @@
                                             }]
                           // 4
                           deliverOn:RACScheduler.mainThreadScheduler];
-  
-  [[[RACSignal combineLatest:@[ RACObserve([SDManager sharedManager], hourlyForecast),
-                                                           RACObserve([SDManager sharedManager], dailyForecast)
-                                                            ]]
-    deliverOn:[RACScheduler mainThreadScheduler]]
+  [[[RACSignal combineLatest:@[ RACObserve([SDLocationManager sharedManager], hourlyForecast),
+                                RACObserve([SDLocationManager sharedManager], dailyForecast)
+                                ]]
+    deliverOn:[RACScheduler mainThreadScheduler]]ter
    subscribeNext:^(id x) {
      [self.tableView reloadData];
-  }];
+   }];
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
   return UIStatusBarStyleLightContent;
 }
-
+/*
 - (void)viewWillLayoutSubviews {
   [super viewWillLayoutSubviews];
   
@@ -198,7 +177,7 @@
   self.blurredImageView.frame = bounds;
   self.tableView.frame = bounds;
 }
-
+*/
 #pragma mark - UIScrollViewDelegate
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
@@ -222,10 +201,10 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
   // 1
   if (section == 0) {
-    return MIN([[SDManager sharedManager].hourlyForecast count], 6) + 1;
+    return MIN([[SDLocationManager sharedManager].hourlyForecast count], 6) + 1;
   }
   // 2
-  return MIN([[SDManager sharedManager].dailyForecast count], 6) + 1;
+  return MIN([[SDLocationManager sharedManager].dailyForecast count], 6) + 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -248,7 +227,7 @@
       [self configureHeaderCell:cell title:@"Hourly Forecast"];
     } else {
       // 2
-      SDCondition *weather = [SDManager sharedManager].hourlyForecast[indexPath.row - 1];
+      SDWeather *weather = [SDLocationManager sharedManager].hourlyForecast[indexPath.row - 1];
       [self configureHourlyCell:cell weather:weather];
     }
   } else if (indexPath.section == 1) {
@@ -257,7 +236,7 @@
       [self configureHeaderCell:cell title:@"Daily Forecast"];
     } else {
       // 3
-      SDCondition *weather = [SDManager sharedManager].dailyForecast[indexPath.row - 1];
+      SDWeather *weather = [SDLocationManager sharedManager].dailyForecast[indexPath.row - 1];
       [self configureDailyCell:cell weather:weather];
     }
   }
@@ -269,7 +248,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
   NSInteger cellCount = [self tableView:tableView numberOfRowsInSection:indexPath.section];
-  return self.screenHeight / (CGFloat)cellCount;
+  return [UIScreen mainScreen].bounds.size.height / (CGFloat)cellCount;
 }
 
 #pragma mark - Private Methods
@@ -283,7 +262,7 @@
 }
 
 // 2
-- (void)configureHourlyCell:(UITableViewCell *)cell weather:(SDCondition *)weather {
+- (void)configureHourlyCell:(UITableViewCell *)cell weather:(SDWeather *)weather {
   cell.textLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:18];
   cell.detailTextLabel.font = [UIFont fontWithName:@"HelveticaNeue-Medium" size:18];
   cell.textLabel.text = [self.hourlyFormatter stringFromDate:weather.date];
@@ -293,7 +272,7 @@
 }
 
 // 3
-- (void)configureDailyCell:(UITableViewCell *)cell weather:(SDCondition *)weather {
+- (void)configureDailyCell:(UITableViewCell *)cell weather:(SDWeather *)weather {
   cell.textLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:18];
   cell.detailTextLabel.font = [UIFont fontWithName:@"HelveticaNeue-Medium" size:18];
   cell.textLabel.text = [self.dailyFormatter stringFromDate:weather.date];

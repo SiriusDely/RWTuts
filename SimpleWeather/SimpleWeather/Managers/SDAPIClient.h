@@ -1,5 +1,5 @@
 //
-//  SDClient.h
+//  SDAPIClient.h
 //  SimpleWeather
 //
 //  Created by SiriusDely on 7/18/14.
@@ -11,7 +11,7 @@
 
 #import <ReactiveCocoa/ReactiveCocoa.h>
 
-@interface SDClient : NSObject
+@interface SDAPIClient : NSObject
 
 - (RACSignal *)fetchJSONFromURL:(NSURL *)url;
 - (RACSignal *)fetchCurrentConditionsForLocation:(CLLocationCoordinate2D)coordinate;

@@ -1,24 +1,24 @@
 //
-//  SDClient.m
+//  SDAPIClient.m
 //  SimpleWeather
 //
 //  Created by SiriusDely on 7/18/14.
 //  Copyright (c) 2014 Sirius Dely. All rights reserved.
 //
 
-#import "SDClient.h"
+#import "SDAPIClient.h"
 
-#import "SDCondition.h"
+#import "SDWeather.h"
 #import "SDDailyForecast.h"
 
 
-@interface SDClient ()
+@interface SDAPIClient ()
 
 @property (nonatomic, strong) NSURLSession *session;
 
 @end
 
-@implementation SDClient
+@implementation SDAPIClient
 
 - (id)init {
   if (self = [super init]) {
@@ -70,7 +70,7 @@
   // 2
   return [[self fetchJSONFromURL:url] map:^(NSDictionary *json) {
     // 3
-    return [MTLJSONAdapter modelOfClass:[SDCondition class] fromJSONDictionary:json error:nil];
+    return [MTLJSONAdapter modelOfClass:[SDWeather class] fromJSONDictionary:json error:nil];
   }];
 }
 
@@ -84,7 +84,7 @@
     // 3
     return [[list map:^(NSDictionary *item) {
       // 4
-      return [MTLJSONAdapter modelOfClass:[SDCondition class] fromJSONDictionary:item error:nil];
+      return [MTLJSONAdapter modelOfClass:[SDWeather class] fromJSONDictionary:item error:nil];
       // 5
     }] array];
   }];

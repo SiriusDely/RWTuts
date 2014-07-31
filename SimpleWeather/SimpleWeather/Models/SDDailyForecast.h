@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 Sirius Dely. All rights reserved.
 //
 
-#import "SDCondition.h"
+#import "SDWeather.h"
 
-@interface SDDailyForecast : SDCondition
+@interface SDDailyForecast : SDWeather
 
 @end

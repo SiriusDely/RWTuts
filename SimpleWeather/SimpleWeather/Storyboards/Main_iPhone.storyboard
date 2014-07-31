@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="9Fw-zw-NJP">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <scenes>
+        <!--Weathers View Controller-->
+        <scene sceneID="hmB-sP-TcE">
+            <objects>
+                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="9Fw-zw-NJP" customClass="SDWeathersViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ahS-ON-csD"/>
+                        <viewControllerLayoutGuide type="bottom" id="JOq-XU-SuM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5OI-sp-dz3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="yGW-Sx-naB">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="25o-u1-zaA">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" pagingEnabled="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ZVE-Bw-EAk">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" red="1" green="1" blue="1" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="9Fw-zw-NJP" id="rTf-UK-TLN"/>
+                                    <outlet property="delegate" destination="9Fw-zw-NJP" id="ws5-qq-cSA"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="25o-u1-zaA" firstAttribute="top" secondItem="5OI-sp-dz3" secondAttribute="top" id="1JB-Hs-XBo"/>
+                            <constraint firstItem="yGW-Sx-naB" firstAttribute="leading" secondItem="5OI-sp-dz3" secondAttribute="leading" id="72K-KM-gRm"/>
+                            <constraint firstItem="yGW-Sx-naB" firstAttribute="top" secondItem="5OI-sp-dz3" secondAttribute="top" id="Aiz-cb-Wsw"/>
+                            <constraint firstAttribute="trailing" secondItem="25o-u1-zaA" secondAttribute="trailing" id="ClO-kc-bea"/>
+                            <constraint firstItem="25o-u1-zaA" firstAttribute="leading" secondItem="5OI-sp-dz3" secondAttribute="leading" id="MmE-y4-kTK"/>
+                            <constraint firstItem="JOq-XU-SuM" firstAttribute="top" secondItem="25o-u1-zaA" secondAttribute="bottom" id="jkY-TL-nwl"/>
+                            <constraint firstItem="JOq-XU-SuM" firstAttribute="top" secondItem="yGW-Sx-naB" secondAttribute="bottom" id="qsj-6Z-vR2"/>
+                            <constraint firstAttribute="trailing" secondItem="yGW-Sx-naB" secondAttribute="trailing" id="vhH-bM-QdK"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="yGW-Sx-naB" id="Uj9-LP-zut"/>
+                        <outlet property="blurredImageView" destination="25o-u1-zaA" id="XoO-gD-YdW"/>
+                        <outlet property="tableView" destination="ZVE-Bw-EAk" id="XLM-pb-JQ7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uVt-Dr-3hA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="450" y="22"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bg" width="320" height="568"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

@@ -1,5 +1,5 @@
 //
-//  SDManager.h
+//  SDLocationManager.h
 //  SimpleWeather
 //
 //  Created by SiriusDely on 7/18/14.
@@ -11,16 +11,16 @@
 
 #import <ReactiveCocoa/ReactiveCocoa/ReactiveCocoa.h>
 // 1
-#import "SDCondition.h"
+#import "SDWeather.h"
 
-@interface SDManager : NSObject <CLLocationManagerDelegate>
+@interface SDLocationManager : NSObject <CLLocationManagerDelegate>
 
 // 2
 + (instancetype)sharedManager;
 
 // 3
 @property (nonatomic, strong, readonly) CLLocation *currentLocation;
-@property (nonatomic, strong, readonly) SDCondition *currentCondition;
+@property (nonatomic, strong, readonly) SDWeather *currentCondition;
 @property (nonatomic, strong, readonly) NSArray *hourlyForecast;
 @property (nonatomic, strong, readonly) NSArray *dailyForecast;
 

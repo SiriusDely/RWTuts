@@ -8,9 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		2B8F9D0A5117466899AAD210 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19CE0F0CDC53404683D8C8C9 /* libPods.a */; };
-		36BB3F2419791A73008D0553 /* SDClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BB3F2319791A73008D0553 /* SDClient.m */; };
-		36BB3F2719791A8F008D0553 /* SDManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BB3F2619791A8F008D0553 /* SDManager.m */; };
-		36BB3F2A19791AA7008D0553 /* SDCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BB3F2919791AA7008D0553 /* SDCondition.m */; };
+		36158746198A404700E83FC7 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36158745198A404700E83FC7 /* Main_iPhone.storyboard */; };
+		36BB3F2419791A73008D0553 /* SDAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BB3F2319791A73008D0553 /* SDAPIClient.m */; };
+		36BB3F2719791A8F008D0553 /* SDLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BB3F2619791A8F008D0553 /* SDLocationManager.m */; };
+		36BB3F2A19791AA7008D0553 /* SDWeather.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BB3F2919791AA7008D0553 /* SDWeather.m */; };
 		36BB3F2D19791AC1008D0553 /* SDDailyForecast.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BB3F2C19791AC1008D0553 /* SDDailyForecast.m */; };
 		36CA4C471977F50F00227ED7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36CA4C461977F50F00227ED7 /* Foundation.framework */; };
 		36CA4C491977F50F00227ED7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36CA4C481977F50F00227ED7 /* CoreGraphics.framework */; };
@@ -24,7 +25,7 @@
 		36CA4C621977F50F00227ED7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36CA4C4A1977F50F00227ED7 /* UIKit.framework */; };
 		36CA4C6A1977F50F00227ED7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 36CA4C681977F50F00227ED7 /* InfoPlist.strings */; };
 		36CA4C6C1977F50F00227ED7 /* SimpleWeatherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 36CA4C6B1977F50F00227ED7 /* SimpleWeatherTests.m */; };
-		36CA4C771977F7A400227ED7 /* SDWeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36CA4C761977F7A400227ED7 /* SDWeatherViewController.m */; };
+		36CA4C771977F7A400227ED7 /* SDWeathersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36CA4C761977F7A400227ED7 /* SDWeathersViewController.m */; };
 		36EAC0E019822FA100129B8B /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 36EAC0DE19822FA100129B8B /* iTunesArtwork */; };
 		36EAC0E119822FA100129B8B /* iTunesArtwork@2x in Resources */ = {isa = PBXBuildFile; fileRef = 36EAC0DF19822FA100129B8B /* iTunesArtwork@2x */; };
 		36EAC0E31982310700129B8B /* track.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 36EAC0E21982310700129B8B /* track.gpx */; };
@@ -43,12 +44,13 @@
 /* Begin PBXFileReference section */
 		19CE0F0CDC53404683D8C8C9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		202C19F2A9784C73A71563F2 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
-		36BB3F2219791A73008D0553 /* SDClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDClient.h; sourceTree = "<group>"; };
-		36BB3F2319791A73008D0553 /* SDClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDClient.m; sourceTree = "<group>"; };
-		36BB3F2519791A8F008D0553 /* SDManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDManager.h; sourceTree = "<group>"; };
-		36BB3F2619791A8F008D0553 /* SDManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDManager.m; sourceTree = "<group>"; };
-		36BB3F2819791AA7008D0553 /* SDCondition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDCondition.h; sourceTree = "<group>"; };
-		36BB3F2919791AA7008D0553 /* SDCondition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDCondition.m; sourceTree = "<group>"; };
+		36158745198A404700E83FC7 /* Main_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPhone.storyboard; sourceTree = "<group>"; };
+		36BB3F2219791A73008D0553 /* SDAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDAPIClient.h; sourceTree = "<group>"; };
+		36BB3F2319791A73008D0553 /* SDAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDAPIClient.m; sourceTree = "<group>"; };
+		36BB3F2519791A8F008D0553 /* SDLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDLocationManager.h; sourceTree = "<group>"; };
+		36BB3F2619791A8F008D0553 /* SDLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDLocationManager.m; sourceTree = "<group>"; };
+		36BB3F2819791AA7008D0553 /* SDWeather.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWeather.h; sourceTree = "<group>"; };
+		36BB3F2919791AA7008D0553 /* SDWeather.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWeather.m; sourceTree = "<group>"; };
 		36BB3F2B19791AC1008D0553 /* SDDailyForecast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDDailyForecast.h; sourceTree = "<group>"; };
 		36BB3F2C19791AC1008D0553 /* SDDailyForecast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDDailyForecast.m; sourceTree = "<group>"; };
 		36CA4C431977F50F00227ED7 /* SimpleWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,8 +69,8 @@
 		36CA4C671977F50F00227ED7 /* SimpleWeatherTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SimpleWeatherTests-Info.plist"; sourceTree = "<group>"; };
 		36CA4C691977F50F00227ED7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		36CA4C6B1977F50F00227ED7 /* SimpleWeatherTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleWeatherTests.m; sourceTree = "<group>"; };
-		36CA4C751977F7A400227ED7 /* SDWeatherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWeatherViewController.h; sourceTree = "<group>"; };
-		36CA4C761977F7A400227ED7 /* SDWeatherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWeatherViewController.m; sourceTree = "<group>"; };
+		36CA4C751977F7A400227ED7 /* SDWeathersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWeathersViewController.h; sourceTree = "<group>"; };
+		36CA4C761977F7A400227ED7 /* SDWeathersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWeathersViewController.m; sourceTree = "<group>"; };
 		36EAC0DE19822FA100129B8B /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
 		36EAC0DF19822FA100129B8B /* iTunesArtwork@2x */ = {isa = PBXFileReference; lastKnownFileType = file; path = "iTunesArtwork@2x"; sourceTree = "<group>"; };
 		36EAC0E21982310700129B8B /* track.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = track.gpx; sourceTree = "<group>"; };
@@ -182,8 +184,8 @@
 		36EAC0D419822AFC00129B8B /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				36BB3F2819791AA7008D0553 /* SDCondition.h */,
-				36BB3F2919791AA7008D0553 /* SDCondition.m */,
+				36BB3F2819791AA7008D0553 /* SDWeather.h */,
+				36BB3F2919791AA7008D0553 /* SDWeather.m */,
 				36BB3F2B19791AC1008D0553 /* SDDailyForecast.h */,
 				36BB3F2C19791AC1008D0553 /* SDDailyForecast.m */,
 			);
@@ -200,8 +202,8 @@
 		36EAC0D619822B1300129B8B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				36CA4C751977F7A400227ED7 /* SDWeatherViewController.h */,
-				36CA4C761977F7A400227ED7 /* SDWeatherViewController.m */,
+				36CA4C751977F7A400227ED7 /* SDWeathersViewController.h */,
+				36CA4C761977F7A400227ED7 /* SDWeathersViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -216,10 +218,10 @@
 		36EAC0D819822B2300129B8B /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				36BB3F2219791A73008D0553 /* SDClient.h */,
-				36BB3F2319791A73008D0553 /* SDClient.m */,
-				36BB3F2519791A8F008D0553 /* SDManager.h */,
-				36BB3F2619791A8F008D0553 /* SDManager.m */,
+				36BB3F2219791A73008D0553 /* SDAPIClient.h */,
+				36BB3F2319791A73008D0553 /* SDAPIClient.m */,
+				36BB3F2519791A8F008D0553 /* SDLocationManager.h */,
+				36BB3F2619791A8F008D0553 /* SDLocationManager.m */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -234,6 +236,7 @@
 		36EAC0DA19822B5C00129B8B /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				36158745198A404700E83FC7 /* Main_iPhone.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 			files = (
 				36EAC0E019822FA100129B8B /* iTunesArtwork in Resources */,
 				36CA4C511977F50F00227ED7 /* InfoPlist.strings in Resources */,
+				36158746198A404700E83FC7 /* Main_iPhone.storyboard in Resources */,
 				36EAC0E31982310700129B8B /* track.gpx in Resources */,
 				36CA4C591977F50F00227ED7 /* Images.xcassets in Resources */,
 				36EAC0E119822FA100129B8B /* iTunesArtwork@2x in Resources */,
@@ -390,13 +394,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36BB3F2719791A8F008D0553 /* SDManager.m in Sources */,
+				36BB3F2719791A8F008D0553 /* SDLocationManager.m in Sources */,
 				36BB3F2D19791AC1008D0553 /* SDDailyForecast.m in Sources */,
 				36CA4C531977F50F00227ED7 /* main.m in Sources */,
 				36CA4C571977F50F00227ED7 /* AppDelegate.m in Sources */,
-				36CA4C771977F7A400227ED7 /* SDWeatherViewController.m in Sources */,
-				36BB3F2A19791AA7008D0553 /* SDCondition.m in Sources */,
-				36BB3F2419791A73008D0553 /* SDClient.m in Sources */,
+				36CA4C771977F7A400227ED7 /* SDWeathersViewController.m in Sources */,
+				36BB3F2A19791AA7008D0553 /* SDWeather.m in Sources */,
+				36BB3F2419791A73008D0553 /* SDAPIClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

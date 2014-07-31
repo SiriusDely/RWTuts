@@ -1,21 +1,21 @@
 //
-//  SDManager.m
+//  SDLocationManager.m
 //  SimpleWeather
 //
 //  Created by SiriusDely on 7/18/14.
 //  Copyright (c) 2014 Sirius Dely. All rights reserved.
 //
 
-#import "SDManager.h"
+#import "SDLocationManager.h"
 
-#import "SDClient.h"
+#import "SDAPIClient.h"
 
 #import <TSMessages/TSMessage.h>
 
-@interface SDManager ()
+@interface SDLocationManager ()
 
 // 1
-@property (nonatomic, strong, readwrite) SDCondition *currentCondition;
+@property (nonatomic, strong, readwrite) SDWeather *currentCondition;
 @property (nonatomic, strong, readwrite) CLLocation *currentLocation;
 @property (nonatomic, strong, readwrite) NSArray *hourlyForecast;
 @property (nonatomic, strong, readwrite) NSArray *dailyForecast;
@@ -23,12 +23,12 @@
 // 2
 @property (nonatomic, strong) CLLocationManager *locationManager;
 @property (nonatomic, assign) BOOL isFirstUpdate;
-@property (nonatomic, strong) SDClient *client;
+@property (nonatomic, strong) SDAPIClient *client;
 
 @end
 
 
-@implementation SDManager
+@implementation SDLocationManager
 
 + (instancetype)sharedManager {
   static id _sharedManager = nil;
@@ -47,7 +47,7 @@
     _locationManager.delegate = self;
     
     // 2
-    _client = [[SDClient alloc] init];
+    _client = [[SDAPIClient alloc] init];
     
     // 3
     [[[[RACObserve(self, currentLocation)
@@ -92,7 +92,7 @@
 }
 
 - (RACSignal *)updateCurrentConditions {
-  return [[self.client fetchCurrentConditionsForLocation:self.currentLocation.coordinate] doNext:^(SDCondition *condition) {
+  return [[self.client fetchCurrentConditionsForLocation:self.currentLocation.coordinate] doNext:^(SDWeather *condition) {
     self.currentCondition = condition;
   }];
 }

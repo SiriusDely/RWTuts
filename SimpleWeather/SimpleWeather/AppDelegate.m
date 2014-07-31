@@ -8,20 +8,14 @@
 
 #import "AppDelegate.h"
 
-#import "SDWeatherViewController.h"
+#import "SDWeathersViewController.h"
 #import <TSMessage.h>
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-  self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-  // 1
-  self.window.rootViewController = [SDWeatherViewController new];
-  self.window.backgroundColor = [UIColor whiteColor];
-  [self.window makeKeyAndVisible];
-  // 2
-  [TSMessage setDefaultViewController: self.window.rootViewController];
+  [TSMessage setDefaultViewController:self.window.rootViewController];
   return YES;
 }
 

@@ -1,14 +1,14 @@
 //
-//  SDCondition.m
+//  SDWeather.m
 //  SimpleWeather
 //
 //  Created by SiriusDely on 7/18/14.
 //  Copyright (c) 2014 Sirius Dely. All rights reserved.
 //
 
-#import "SDCondition.h"
+#import "SDWeather.h"
 
-@implementation SDCondition
+@implementation SDWeather
 
 + (NSDictionary *)imageMap {
   // 1
@@ -41,7 +41,7 @@
 
 // 3
 - (NSString *)imageName {
-  return [SDCondition imageMap][self.icon];
+  return [SDWeather imageMap][self.icon];
 }
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
