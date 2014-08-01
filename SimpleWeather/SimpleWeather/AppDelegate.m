@@ -8,7 +8,6 @@
 
 #import "AppDelegate.h"
 
-#import "SDWeathersViewController.h"
 #import <TSMessage.h>
 
 @implementation AppDelegate

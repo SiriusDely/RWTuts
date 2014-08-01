@@ -1,5 +1,5 @@
 //
-//  SDWeathersViewController.h
+//  SDWeatherViewController.h
 //  SimpleWeather
 //
 //  Created by SiriusDely on 7/17/14.
@@ -9,6 +9,6 @@
 #import "SDLocationManager.h"
 
 
-@interface SDWeathersViewController : UIViewController
+@interface SDWeatherViewController : UIViewController
 
 @end

@@ -9,7 +9,7 @@
 @import Foundation;
 @import CoreLocation;
 
-#import <ReactiveCocoa/ReactiveCocoa/ReactiveCocoa.h>
+#import <ReactiveCocoa/ReactiveCocoa.h>
 // 1
 #import "SDWeather.h"
 
